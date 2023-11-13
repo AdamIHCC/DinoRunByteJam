@@ -4,11 +4,8 @@ res://frog.tscn
 res://main_menu.tscn
 res://doux_menu_sprite.tscn
 res://bg.tscn
-res://world_1.gd
-res://Area2D.gd
-res://portalArea.gd
 res://Portal.tscn
-res://Portal.gd
 res://world_2.tscn
+res://background.tscn
 res://Dino.gd
-res://hitbox.gd
+res://enemy_2.tscn
