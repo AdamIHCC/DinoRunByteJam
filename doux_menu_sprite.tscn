@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=3 uid="uid://dqeor7egha6h5"]
+
+[ext_resource type="Texture2D" uid="uid://dhucg4e205384" path="res://dinoCharactersVersion1.1/sheets/DinoSprites - doux.png" id="1_mgd8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kam5q"]
+size = Vector2(115.5, 201.625)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w56c"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(408, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nelk4"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(432, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bld1w"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(456, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84pxy"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(480, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c54q1"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(504, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2trkk"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(528, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqeru"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(552, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4voy3"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bmjf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w56c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nelk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bld1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84pxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c54q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2trkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqeru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4voy3")
+}],
+"loop": true,
+"name": &"DouxMenuRun",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_jp18d"]
+resource_name = "DouxMenu"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"DouxMenuRun"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_8ckxx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"DouxMenuRun"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psrg4"]
+_data = {
+"DouxMenu": SubResource("Animation_jp18d"),
+"RESET": SubResource("Animation_8ckxx")
+}
+
+[node name="DouxMenuSprite" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19.1875)
+shape = SubResource("RectangleShape2D_kam5q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4.57764e-05)
+scale = Vector2(11.4062, 13.3542)
+sprite_frames = SubResource("SpriteFrames_6bmjf")
+animation = &"DouxMenuRun"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "DouxMenu"
+libraries = {
+"": SubResource("AnimationLibrary_psrg4")
+}

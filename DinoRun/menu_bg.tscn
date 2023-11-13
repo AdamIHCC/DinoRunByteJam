@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://rympx11ovwfy"]
+
+[ext_resource type="Script" path="res://MenuBG.gd" id="1_2q6n4"]
+[ext_resource type="Texture2D" uid="uid://3u40okw0ecg0" path="res://Pixel_Adventure_1/Free/Background/Green.png" id="2_s33gy"]
+
+[node name="MenuBG" type="ParallaxBackground"]
+script = ExtResource("1_2q6n4")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="Green" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(576, 325)
+scale = Vector2(18.0156, 10.125)
+texture = ExtResource("2_s33gy")

@@ -1,0 +1,286 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0mc6s52bo03j"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_rxrws"]
+[ext_resource type="PackedScene" uid="uid://dqeor7egha6h5" path="res://doux_menu_sprite.tscn" id="2_aqv3s"]
+[ext_resource type="FontFile" uid="uid://qwqdjkmxmuat" path="res://SuperMario256.ttf" id="2_cli52"]
+[ext_resource type="PackedScene" uid="uid://1thiep74x864" path="res://bg.tscn" id="4_aom5g"]
+[ext_resource type="Texture2D" uid="uid://1f7d55ejox66" path="res://tileset.png" id="5_5acvw"]
+[ext_resource type="Script" path="res://BackgroundGround.gd" id="5_dsqb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aod5d"]
+size = Vector2(464.5, 112.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntnw3"]
+texture = ExtResource("5_5acvw")
+1:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+20:4/0 = 0
+22:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+20:5/0 = 0
+22:5/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+17:7/0 = 0
+19:7/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+19:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+7:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+15:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+7:13/0 = 0
+9:13/0 = 0
+11:13/0 = 0
+13:13/0 = 0
+7:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+15:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+9:15/0 = 0
+2:16/0 = 0
+4:16/0 = 0
+11:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+11:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+17:18/0 = 0
+19:18/0 = 0
+21:18/0 = 0
+1:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+17:20/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j6n0j"]
+sources/0 = SubResource("TileSetAtlasSource_ntnw3")
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_rxrws")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 454.0
+offset_top = 172.0
+offset_right = 792.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0.968627, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.686275, 0.709804, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 454.0
+offset_top = 336.0
+offset_right = 792.0
+offset_bottom = 460.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.721569, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 115.0
+offset_top = 40.0
+offset_right = 186.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_cli52")
+theme_override_font_sizes/font_size = 100
+text = "D"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 185.0
+offset_top = 40.0
+offset_right = 256.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0.501961, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_cli52")
+theme_override_font_sizes/font_size = 100
+text = "I"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 454.0
+offset_top = 40.0
+offset_right = 525.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0.501961, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_cli52")
+theme_override_font_sizes/font_size = 100
+text = "R"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 233.0
+offset_top = 40.0
+offset_right = 304.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(1, 0.85098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_cli52")
+theme_override_font_sizes/font_size = 100
+text = "n"
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 601.0
+offset_top = 40.0
+offset_right = 672.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(1, 0.85098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_cli52")
+theme_override_font_sizes/font_size = 100
+text = "n"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 304.0
+offset_top = 40.0
+offset_right = 380.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.0235294, 0.760784, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_cli52")
+theme_override_font_sizes/font_size = 100
+text = "o"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 525.0
+offset_top = 40.0
+offset_right = 601.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.0235294, 0.760784, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_cli52")
+theme_override_font_sizes/font_size = 100
+text = "u"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(233, 534)
+shape = SubResource("RectangleShape2D_aod5d")
+
+[node name="DouxMenuSprite" parent="." instance=ExtResource("2_aqv3s")]
+position = Vector2(185, 356)
+
+[node name="BG" parent="." instance=ExtResource("4_aom5g")]
+
+[node name="BackgroundGround" type="ParallaxBackground" parent="."]
+script = ExtResource("5_dsqb4")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackgroundGround"]
+motion_scale = Vector2(3, 3)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="TileMap" type="TileMap" parent="BackgroundGround/ParallaxLayer"]
+scale = Vector2(10, 10)
+tile_set = SubResource("TileSet_j6n0j")
+format = 2
+layer_0/tile_data = PackedInt32Array(196608, 65536, 1, 196609, 196608, 1, 196610, 327680, 1, 196611, 196608, 1, 196612, 327680, 1, 196613, 196608, 1, 196614, 327680, 1, 196615, 196608, 1, 262144, 196608, 3, 262145, 196608, 3, 262146, 196608, 3, 262147, 196608, 3, 262148, 196608, 3, 262149, 196608, 3, 262150, 196608, 3, 262151, 196608, 3)
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

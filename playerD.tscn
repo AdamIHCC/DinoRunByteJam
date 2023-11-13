@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://bk6p1ndj30jny"]
+
+[ext_resource type="Script" path="res://playerD.gd" id="1_prq58"]
+[ext_resource type="Texture2D" uid="uid://kg10y5fnv6jm" path="res://Free/Main Characters/Pink Man/Idle (32x32).png" id="2_s0fbr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imp5k"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foli4"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqnlj"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erk20"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quses"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77bw0"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j320u"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j6o0"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_388te"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by4be"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we4ht"]
+atlas = ExtResource("2_s0fbr")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d125v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imp5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foli4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqnlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erk20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quses")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77bw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j320u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j6o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_388te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by4be")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we4ht")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27mux"]
+size = Vector2(22, 23)
+
+[node name="PlayerD" type="CharacterBody2D"]
+script = ExtResource("1_prq58")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(0.9375, 0.9375)
+sprite_frames = SubResource("SpriteFrames_d125v")
+animation = &"Idle"
+frame_progress = 0.917721
+speed_scale = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_27mux")

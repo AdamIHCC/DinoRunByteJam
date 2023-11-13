@@ -1,0 +1,14 @@
+res://world_1.tscn
+res://main_menu.gd
+res://frog.tscn
+res://main_menu.tscn
+res://doux_menu_sprite.tscn
+res://bg.tscn
+res://world_1.gd
+res://Area2D.gd
+res://portalArea.gd
+res://Portal.tscn
+res://Portal.gd
+res://world_2.tscn
+res://Dino.gd
+res://hitbox.gd

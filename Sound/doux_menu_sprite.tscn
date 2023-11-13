@@ -1,0 +1,159 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6dhomanevvw0"]
+
+[ext_resource type="Texture2D" uid="uid://dxr2k4ifjh333" path="res://dinoCharactersVersion1.1/sheets/DinoSprites - doux.png" id="1_mgd8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw2ae"]
+size = Vector2(149, 174.563)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tevkl"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(408, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30mh4"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(432, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhpkl"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(456, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tli2j"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(480, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed4pu"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(504, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpb84"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(528, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svsr2"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(552, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeu3i"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pwwx"]
+atlas = ExtResource("1_mgd8i")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sjot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tevkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30mh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhpkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tli2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed4pu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpb84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svsr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeu3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pwwx")
+}],
+"loop": true,
+"name": &"douxMenuRun",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5aryd"]
+resource_name = "DouxMenuRun"
+length = 1.47
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"douxMenuRun"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.01, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 1.05, 1.15, 1.25, 1.35, 1.45, 1.47),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 1, 2, 3, 4, 5, 6, 1, 5, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_gufhm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"douxMenuRun"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ee3ch"]
+_data = {
+"DouxMenuRun": SubResource("Animation_5aryd"),
+"RESET": SubResource("Animation_gufhm")
+}
+
+[node name="DouxMenuSprite" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 52.7188)
+shape = SubResource("RectangleShape2D_iw2ae")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 2)
+scale = Vector2(13.6979, 15.3854)
+sprite_frames = SubResource("SpriteFrames_5sjot")
+animation = &"douxMenuRun"
+frame = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "DouxMenuRun"
+libraries = {
+"": SubResource("AnimationLibrary_ee3ch")
+}

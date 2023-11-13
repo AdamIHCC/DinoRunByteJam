@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://drei7kurdnwb4"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_lx57l"]
+[ext_resource type="Texture2D" uid="uid://drn0n7e3nnv3e" path="res://Free/Main Characters/Mask Dude/Jump (32x32).png" id="2_nwju5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0a6c"]
+size = Vector2(19, 25)
+
+[node name="Enemy" type="Area2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_lx57l")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_nwju5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_p0a6c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

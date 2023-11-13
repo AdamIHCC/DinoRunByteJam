@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://04tlvskatkya"]
+
+[ext_resource type="Texture2D" uid="uid://btrch3ycdaquf" path="res://Free/Traps/Spikes/Idle.png" id="1_pk1io"]
+[ext_resource type="PackedScene" uid="uid://b71ht5nnc3s6c" path="res://hitbox.tscn" id="2_xchcc"]
+
+[node name="spike" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(17.4375, -11.8824)
+scale = Vector2(4.875, 3.27941)
+texture = ExtResource("1_pk1io")
+region_enabled = true
+region_rect = Rect2(0, 9, 15, 8)
+
+[node name="Hitbox" parent="." instance=ExtResource("2_xchcc")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+position = Vector2(-0.74696, 1.85625)
+scale = Vector2(0.981419, 0.8125)
+polygon = PackedVector2Array(-18, 0, -13, -19, -2, -33, 40, -31, 54, -11, 56, 0)

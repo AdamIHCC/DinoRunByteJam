@@ -1,0 +1,288 @@
+[gd_scene load_steps=10 format=3 uid="uid://ds6lqsa031yyn"]
+
+[ext_resource type="PackedScene" uid="uid://rympx11ovwfy" path="res://menu_bg.tscn" id="1_6itel"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_rxrws"]
+[ext_resource type="PackedScene" uid="uid://b6dhomanevvw0" path="res://doux_menu_sprite.tscn" id="2_aqv3s"]
+[ext_resource type="Texture2D" uid="uid://ceu43i61324ej" path="res://sunny-land/assets/maps/tileset.png" id="3_lyte8"]
+[ext_resource type="Script" path="res://MenuGround.gd" id="3_yhjt7"]
+[ext_resource type="FontFile" uid="uid://d25wvxqqs3j4" path="res://SuperMario256.ttf" id="5_1qmox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqvqh"]
+size = Vector2(2261, 74)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2fbon"]
+texture = ExtResource("3_lyte8")
+1:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+20:4/0 = 0
+22:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+20:5/0 = 0
+22:5/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+17:7/0 = 0
+19:7/0 = 0
+15:9/0 = 0
+17:9/0 = 0
+19:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+7:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+15:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+7:13/0 = 0
+9:13/0 = 0
+11:13/0 = 0
+13:13/0 = 0
+7:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+15:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+9:15/0 = 0
+2:16/0 = 0
+4:16/0 = 0
+11:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+11:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+17:18/0 = 0
+19:18/0 = 0
+21:18/0 = 0
+1:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+17:20/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3u06h"]
+sources/0 = SubResource("TileSetAtlasSource_2fbon")
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_rxrws")
+
+[node name="MenuBG" parent="." instance=ExtResource("1_6itel")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1165.5, 480)
+shape = SubResource("RectangleShape2D_rqvqh")
+
+[node name="DouxMenuSprite" parent="." instance=ExtResource("2_aqv3s")]
+position = Vector2(220, 302)
+
+[node name="MenuGround" type="ParallaxBackground" parent="."]
+script = ExtResource("3_yhjt7")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="MenuGround"]
+motion_scale = Vector2(5, 5)
+motion_mirroring = Vector2(2400, 0)
+
+[node name="TileMap" type="TileMap" parent="MenuGround/ParallaxLayer"]
+position = Vector2(0, -40)
+scale = Vector2(10, 10)
+tile_set = SubResource("TileSet_3u06h")
+format = 2
+layer_0/tile_data = PackedInt32Array(196608, 65536, 1, 196610, 196608, 1, 196611, 327680, 1, 196612, 196608, 1, 1966081, 196608, 1, 1966082, 327680, 1, 1966083, 65536, 1, 1966084, 196608, 1, 1966085, 327680, 1, 1966080, 65536, 1, 1966086, 65536, 1, 1966087, 196608, 1, 1966088, 327680, 1, 1966089, 65536, 1, 1966090, 196608, 1, 1966091, 327680, 1, 1966092, 65536, 1, 1966093, 196608, 1, 1966094, 327680, 1, 1966095, 65536, 1, 1966096, 196608, 1, 1966097, 327680, 1, 1966098, 65536, 1, 1966099, 196608, 1, 1966100, 327680, 1, 1966101, 65536, 1, 1966102, 196608, 1, 1966103, 327680, 1, 1966104, 65536, 1, 1966105, 196608, 1, 1966106, 327680, 1, 1966107, 65536, 1, 1966108, 196608, 1, 1966109, 327680, 1, 1966110, 65536, 1, 1966111, 196608, 1, 1966112, 327680, 1, 1966113, 65536, 1, 1966114, 196608, 1, 1966115, 327680, 1, 1966116, 65536, 1, 1966117, 196608, 1, 1966118, 327680, 1, 1966119, 65536, 1, 1966120, 196608, 1, 1966121, 327680, 1, 1966122, 65536, 1, 1966123, 196608, 1, 1966124, 327680, 1, 1966125, 65536, 1, 1966126, 196608, 1, 1966127, 327680, 1, 1966128, 65536, 1, 1966129, 196608, 1, 1966130, 327680, 1, 1966131, 65536, 1, 1966132, 196608, 1, 1966133, 327680, 1, 1966134, 65536, 1, 1966135, 196608, 1, 1966136, 327680, 1, 1966137, 65536, 1, 1966138, 196608, 1, 1966139, 327680, 1, 1966140, 65536, 1, 1966141, 196608, 1, 1966142, 327680, 1, 1966143, 65536, 1, 1966144, 196608, 1, 1966145, 327680, 1, 1966146, 65536, 1, 1966147, 196608, 1, 1966148, 327680, 1, 1966149, 65536, 1, 1966150, 196608, 1, 1966151, 327680, 1, 196609, 196608, 1, 196613, 327680, 1, 196614, 65536, 1, 196615, 196608, 1, 196616, 196608, 1, 196617, 327680, 1, 196618, 196608, 1, 196619, 327680, 1, 196620, 65536, 1, 196621, 196608, 1, 196622, 196608, 1, 262144, 196608, 3, 262145, 196608, 3, 262146, 196608, 3, 262147, 196608, 3, 262148, 196608, 3, 262149, 196608, 3, 262150, 196608, 3, 262151, 196608, 3, 262152, 196608, 3, 262153, 196608, 3, 262154, 196608, 3, 262155, 196608, 3, 262156, 196608, 3, 262157, 196608, 3, 262158, 196608, 3)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 40.0
+offset_right = 223.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("5_1qmox")
+theme_override_font_sizes/font_size = 150
+text = "D"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 234.0
+offset_top = 37.0
+offset_right = 332.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0, 0.486275, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("5_1qmox")
+theme_override_font_sizes/font_size = 150
+text = "i"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 280.0
+offset_top = 34.0
+offset_right = 418.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0.968627, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("5_1qmox")
+theme_override_font_sizes/font_size = 150
+text = "n"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 387.0
+offset_top = 38.0
+offset_right = 525.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.14902, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("5_1qmox")
+theme_override_font_sizes/font_size = 150
+text = "o"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 585.0
+offset_top = 34.0
+offset_right = 683.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0, 0.486275, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("5_1qmox")
+theme_override_font_sizes/font_size = 150
+text = "R"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 692.0
+offset_top = 41.0
+offset_right = 830.0
+offset_bottom = 198.0
+theme_override_colors/font_color = Color(0.14902, 0.678431, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("5_1qmox")
+theme_override_font_sizes/font_size = 150
+text = "u"
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 786.0
+offset_top = 37.0
+offset_right = 924.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0.968627, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("5_1qmox")
+theme_override_font_sizes/font_size = 150
+text = "n"
+
+[node name="Play" type="Button" parent="."]
+offset_left = 452.0
+offset_top = 196.0
+offset_right = 780.0
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(0.917647, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.686275, 0.709804, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 452.0
+offset_top = 320.0
+offset_right = 780.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.568627, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Quit
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://lcpxs6osmwse"]
+
+[ext_resource type="PackedScene" uid="uid://dhiigt8cbp0td" path="res://tile_map_2.tscn" id="1_j8fn0"]
+[ext_resource type="PackedScene" uid="uid://ct6nbgauxydl1" path="res://frog.tscn" id="2_m4rr7"]
+
+[node name="world2" type="Node2D"]
+
+[node name="TileMap2" parent="." instance=ExtResource("1_j8fn0")]
+position = Vector2(64, 82)
+layer_0/tile_data = PackedInt32Array(196606, 1114112, 4, 262142, 1114112, 5, 327678, 1114112, 6, 196607, 1179648, 4, 262143, 1179648, 5, 327679, 1179648, 6, 131072, 1114112, 4, 196608, 1114112, 5, 262144, 1114112, 6, 131073, 1179648, 4, 196609, 1179648, 5, 262145, 1179648, 6, 131074, 1245184, 4, 196610, 1245184, 5, 262146, 1245184, 6, 131075, 1114112, 4, 196611, 1114112, 5, 262147, 1114112, 6, 131076, 1179648, 4, 196612, 1179648, 5, 262148, 1179648, 6, 131077, 1245184, 4, 196613, 1245184, 5, 262149, 1245184, 6, 131078, 1114112, 4, 196614, 1114112, 5, 262150, 1114112, 6, 131079, 1179648, 4, 196615, 1179648, 5, 262151, 1179648, 6, 131080, 1245184, 4, 196616, 1245184, 5, 262152, 1245184, 6)
+
+[node name="Frog" parent="." instance=ExtResource("2_m4rr7")]
+position = Vector2(47, 100)
