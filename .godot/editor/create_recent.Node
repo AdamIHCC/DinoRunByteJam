@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 AnimationPlayer
 CollisionShape2D
 StaticBody2D
@@ -11,7 +12,6 @@ CharacterBody2D
 Label
 Button
 AudioStreamPlayer
-AudioStreamPlayer2D
 Node
 RayCast2D
 Camera2D
